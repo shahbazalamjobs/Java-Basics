@@ -797,3 +797,617 @@ This program demonstrates how to define and use methods in Java, including metho
 
 ---
 
+Certainly! Here’s a single Java program that demonstrates Java classes, Object-Oriented Programming (OOP) concepts, classes and objects, class attributes, class methods, and constructors:
+
+```java
+// Java Classes, OOP, Classes/Objects, Class Attributes, Class Methods, Constructors
+
+class Car {
+    // Class Attributes
+    String brand;
+    String model;
+    int year;
+    double price;
+
+    // Constructor
+    public Car(String brand, String model, int year, double price) {
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+        this.price = price;
+    }
+
+    // Class Method
+    public void displayInfo() {
+        System.out.println("Brand: " + brand);
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+        System.out.println("Price: $" + price);
+    }
+
+    // Another Class Method
+    public void startEngine() {
+        System.out.println(model + " engine started.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating an object (Instance of Car)
+        Car car1 = new Car("Toyota", "Corolla", 2020, 20000);
+        Car car2 = new Car("Honda", "Civic", 2019, 22000);
+
+        // Accessing Class Attributes
+        System.out.println("Car 1 Brand: " + car1.brand); // Output: Car 1 Brand: Toyota
+        System.out.println("Car 2 Model: " + car2.model); // Output: Car 2 Model: Civic
+
+        // Calling Class Methods
+        System.out.println("\nCar 1 Info:");
+        car1.displayInfo(); // Display information of car1
+        car1.startEngine(); // Output: Corolla engine started.
+
+        System.out.println("\nCar 2 Info:");
+        car2.displayInfo(); // Display information of car2
+        car2.startEngine(); // Output: Civic engine started.
+    }
+}
+```
+
+### Explanation and Output:
+
+1. **Java Classes and OOP Concepts**:
+   - The `Car` class is a blueprint for creating car objects. It encapsulates data (attributes) and methods (functions) related to a car.
+   - **Attributes**: `brand`, `model`, `year`, and `price` are attributes of the `Car` class.
+   - **Methods**: `displayInfo` and `startEngine` are methods of the `Car` class.
+   - **Constructor**: The `Car` constructor initializes the object with values for `brand`, `model`, `year`, and `price`.
+
+2. **Java Classes/Objects**:
+   - Objects are instances of classes. In the `Main` class, two `Car` objects (`car1` and `car2`) are created using the `Car` constructor.
+     ```java
+     Car car1 = new Car("Toyota", "Corolla", 2020, 20000);
+     Car car2 = new Car("Honda", "Civic", 2019, 22000);
+     ```
+
+3. **Java Class Attributes**:
+   - Class attributes are accessed using the dot notation.
+     ```java
+     System.out.println("Car 1 Brand: " + car1.brand); // Output: Car 1 Brand: Toyota
+     System.out.println("Car 2 Model: " + car2.model); // Output: Car 2 Model: Civic
+     ```
+
+4. **Java Class Methods**:
+   - Class methods are also accessed using the dot notation and can perform actions using the object's attributes.
+     ```java
+     car1.displayInfo();
+     car1.startEngine(); // Output: Corolla engine started.
+
+     car2.displayInfo();
+     car2.startEngine(); // Output: Civic engine started.
+     ```
+
+5. **Java Constructors**:
+   - The constructor method initializes the object's attributes when an object is created.
+     ```java
+     public Car(String brand, String model, int year, double price) {
+         this.brand = brand;
+         this.model = model;
+         this.year = year;
+         this.price = price;
+     }
+     ```
+
+### Output:
+
+```
+Car 1 Brand: Toyota
+Car 2 Model: Civic
+
+Car 1 Info:
+Brand: Toyota
+Model: Corolla
+Year: 2020
+Price: $20000.0
+Corolla engine started.
+
+Car 2 Info:
+Brand: Honda
+Model: Civic
+Year: 2019
+Price: $22000.0
+Civic engine started.
+```
+
+This comprehensive program demonstrates the essential OOP concepts in Java, including class creation, object instantiation, attribute manipulation, method invocation, and constructor usage.
+
+
+---
+
+
+Sure! Here's a comprehensive Java program that covers Java modifiers, encapsulation, packages, inheritance, and polymorphism:
+
+```java
+// Java Packages / API
+package com.example;
+
+// Java Modifiers, Encapsulation, Inheritance, Polymorphism
+
+// Modifier Example: Public class
+public class Main {
+    public static void main(String[] args) {
+        // Creating objects
+        Person person = new Person("John", 25);
+        Student student = new Student("Jane", 22, "Computer Science");
+
+        // Accessing and modifying attributes via getters and setters (Encapsulation)
+        System.out.println("Person Name: " + person.getName()); // Output: Person Name: John
+        System.out.println("Person Age: " + person.getAge());   // Output: Person Age: 25
+
+        System.out.println("Student Name: " + student.getName()); // Output: Student Name: Jane
+        System.out.println("Student Age: " + student.getAge());   // Output: Student Age: 22
+        System.out.println("Student Major: " + student.getMajor()); // Output: Student Major: Computer Science
+
+        // Using method overriding (Polymorphism)
+        System.out.println(person.getDescription()); // Output: John is 25 years old.
+        System.out.println(student.getDescription()); // Output: Jane is 22 years old and studies Computer Science.
+    }
+}
+
+// Modifier Example: Public class with private attributes (Encapsulation)
+class Person {
+    // Private attributes
+    private String name;
+    private int age;
+
+    // Constructor
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Getter and Setter for name (Encapsulation)
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Getter and Setter for age (Encapsulation)
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    // Method to return description
+    public String getDescription() {
+        return name + " is " + age + " years old.";
+    }
+}
+
+// Inheritance: Student is a subclass of Person
+class Student extends Person {
+    // Additional attribute for Student
+    private String major;
+
+    // Constructor
+    public Student(String name, int age, String major) {
+        super(name, age); // Call the constructor of the superclass (Person)
+        this.major = major;
+    }
+
+    // Getter and Setter for major (Encapsulation)
+    public String getMajor() {
+        return major;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
+    }
+
+    // Overriding getDescription method (Polymorphism)
+    @Override
+    public String getDescription() {
+        return getName() + " is " + getAge() + " years old and studies " + major + ".";
+    }
+}
+```
+
+### Explanation:
+
+1. **Java Packages / API**:
+   - Packages are used to group related classes and avoid naming conflicts. In this example, `com.example` is the package name.
+     ```java
+     package com.example;
+     ```
+
+2. **Java Modifiers**:
+   - The `public` modifier makes the class and methods accessible from other classes.
+   - The `private` modifier restricts access to the class members.
+     ```java
+     public class Main { ... }
+     class Person { ... }
+     class Student extends Person { ... }
+     ```
+
+3. **Java Encapsulation**:
+   - Encapsulation is achieved by making class attributes private and providing public getter and setter methods to access and modify them.
+     ```java
+     private String name;
+     private int age;
+
+     public String getName() { ... }
+     public void setName(String name) { ... }
+     public int getAge() { ... }
+     public void setAge(int age) { ... }
+     ```
+
+4. **Java Inheritance**:
+   - Inheritance allows a class to inherit attributes and methods from another class. `Student` class inherits from `Person` class.
+     ```java
+     class Student extends Person { ... }
+     ```
+
+5. **Java Polymorphism**:
+   - Polymorphism allows methods to have different implementations based on the object that is calling them. The `getDescription` method is overridden in the `Student` class.
+     ```java
+     @Override
+     public String getDescription() { ... }
+     ```
+
+### Output:
+
+```
+Person Name: John
+Person Age: 25
+Student Name: Jane
+Student Age: 22
+Student Major: Computer Science
+John is 25 years old.
+Jane is 22 years old and studies Computer Science.
+```
+
+This program demonstrates the use of Java modifiers, encapsulation, packages, inheritance, and polymorphism, with clear and concise examples of each concept.
+
+---
+
+
+Sure! Below is a comprehensive Java program that includes examples of inner classes, abstraction, interfaces, enums, user input, and date manipulation.
+
+```java
+// Import necessary packages
+import java.util.Scanner;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
+// Java Inner Classes, Abstraction, Interface, Enums, User Input, Date
+
+public class Main {
+    public static void main(String[] args) {
+        // Java User Input
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();
+        System.out.println("Hello, " + name + "!"); // Output depends on user input
+
+        // Java Date
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        System.out.println("Current date and time: " + formatter.format(date)); // Output: Current date and time: <formatted current date and time>
+
+        // Java Enums
+        Level level = Level.HIGH;
+        System.out.println("Selected level: " + level); // Output: Selected level: HIGH
+
+        // Java Inner Classes
+        OuterClass outer = new OuterClass();
+        OuterClass.InnerClass inner = outer.new InnerClass();
+        inner.display(); // Output: This is an inner class.
+
+        // Java Abstraction and Interface
+        Shape circle = new Circle(5);
+        System.out.println("Area of circle: " + circle.calculateArea()); // Output: Area of circle: <calculated area>
+
+        scanner.close();
+    }
+}
+
+// Java Enums
+enum Level {
+    LOW,
+    MEDIUM,
+    HIGH
+}
+
+// Java Inner Classes
+class OuterClass {
+    int outerValue = 10;
+
+    class InnerClass {
+        int innerValue = 20;
+
+        void display() {
+            System.out.println("This is an inner class."); // Output: This is an inner class.
+            System.out.println("Outer value: " + outerValue); // Output: Outer value: 10
+            System.out.println("Inner value: " + innerValue); // Output: Inner value: 20
+        }
+    }
+}
+
+// Java Abstraction
+abstract class Shape {
+    abstract double calculateArea();
+}
+
+// Java Interface
+interface Drawable {
+    void draw();
+}
+
+class Circle extends Shape implements Drawable {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+
+    @Override
+    public void draw() {
+        System.out.println("Drawing a circle.");
+    }
+}
+```
+
+### Explanation:
+
+1. **Java User Input**:
+   - Uses `Scanner` to read user input from the console.
+     ```java
+     Scanner scanner = new Scanner(System.in);
+     System.out.print("Enter your name: ");
+     String name = scanner.nextLine();
+     System.out.println("Hello, " + name + "!");
+     ```
+
+2. **Java Date**:
+   - Uses `Date` and `SimpleDateFormat` to display the current date and time.
+     ```java
+     Date date = new Date();
+     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+     System.out.println("Current date and time: " + formatter.format(date));
+     ```
+
+3. **Java Enums**:
+   - Defines an enum `Level` and uses it to set a level.
+     ```java
+     enum Level {
+         LOW,
+         MEDIUM,
+         HIGH
+     }
+
+     Level level = Level.HIGH;
+     System.out.println("Selected level: " + level);
+     ```
+
+4. **Java Inner Classes**:
+   - Demonstrates the use of inner classes.
+     ```java
+     class OuterClass {
+         int outerValue = 10;
+
+         class InnerClass {
+             int innerValue = 20;
+
+             void display() {
+                 System.out.println("This is an inner class.");
+                 System.out.println("Outer value: " + outerValue);
+                 System.out.println("Inner value: " + innerValue);
+             }
+         }
+     }
+
+     OuterClass outer = new OuterClass();
+     OuterClass.InnerClass inner = outer.new InnerClass();
+     inner.display();
+     ```
+
+5. **Java Abstraction**:
+   - Demonstrates abstraction through the `Shape` abstract class.
+     ```java
+     abstract class Shape {
+         abstract double calculateArea();
+     }
+     ```
+
+6. **Java Interface**:
+   - Implements the `Drawable` interface in the `Circle` class.
+     ```java
+     interface Drawable {
+         void draw();
+     }
+
+     class Circle extends Shape implements Drawable {
+         private double radius;
+
+         public Circle(double radius) {
+             this.radius = radius;
+         }
+
+         @Override
+         double calculateArea() {
+             return Math.PI * radius * radius;
+         }
+
+         @Override
+         public void draw() {
+             System.out.println("Drawing a circle.");
+         }
+     }
+
+     Shape circle = new Circle(5);
+     System.out.println("Area of circle: " + circle.calculateArea());
+     ```
+
+### Output:
+
+```
+Enter your name: [User enters name]
+Hello, [User's name]!
+Current date and time: [Formatted current date and time]
+Selected level: HIGH
+This is an inner class.
+Outer value: 10
+Inner value: 20
+Area of circle: [Calculated area]
+```
+
+This program integrates various Java concepts into a cohesive example, demonstrating inner classes, abstraction, interfaces, enums, user input, and date manipulation.
+
+
+---
+
+
+Sure! Here is a comprehensive Java program that includes examples of using `ArrayList`, `LinkedList`, `List` sorting, and `HashMap`:
+
+```java
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+
+public class Main {
+    public static void main(String[] args) {
+        // Java ArrayList
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("Banana");
+        arrayList.add("Apple");
+        arrayList.add("Orange");
+        System.out.println("ArrayList: " + arrayList); // Output: ArrayList: [Banana, Apple, Orange]
+
+        // Java LinkedList
+        LinkedList<String> linkedList = new LinkedList<>();
+        linkedList.add("Dog");
+        linkedList.add("Cat");
+        linkedList.add("Horse");
+        System.out.println("LinkedList: " + linkedList); // Output: LinkedList: [Dog, Cat, Horse]
+
+        // Java List Sorting
+        // Sorting ArrayList
+        Collections.sort(arrayList);
+        System.out.println("Sorted ArrayList: " + arrayList); // Output: Sorted ArrayList: [Apple, Banana, Orange]
+
+        // Sorting LinkedList
+        Collections.sort(linkedList);
+        System.out.println("Sorted LinkedList: " + linkedList); // Output: Sorted LinkedList: [Cat, Dog, Horse]
+
+        // Sorting with custom comparator
+        arrayList.sort(Comparator.reverseOrder());
+        System.out.println("Reverse Sorted ArrayList: " + arrayList); // Output: Reverse Sorted ArrayList: [Orange, Banana, Apple]
+
+        // Java HashMap
+        HashMap<String, Integer> hashMap = new HashMap<>();
+        hashMap.put("One", 1);
+        hashMap.put("Two", 2);
+        hashMap.put("Three", 3);
+        System.out.println("HashMap: " + hashMap); // Output: HashMap: {One=1, Two=2, Three=3}
+
+        // Iterating through HashMap
+        for (Map.Entry<String, Integer> entry : hashMap.entrySet()) {
+            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+            // Output:
+            // Key: One, Value: 1
+            // Key: Two, Value: 2
+            // Key: Three, Value: 3
+        }
+
+        // Another way of iterating through HashMap using forEach
+        hashMap.forEach((key, value) -> System.out.println("Key: " + key + ", Value: " + value));
+        // Output:
+        // Key: One, Value: 1
+        // Key: Two, Value: 2
+        // Key: Three, Value: 3
+    }
+}
+```
+
+### Explanation and Output:
+
+1. **Java ArrayList**:
+   - `ArrayList` is a resizable array implementation of the `List` interface.
+   - Elements can be added and retrieved by index.
+     ```java
+     ArrayList<String> arrayList = new ArrayList<>();
+     arrayList.add("Banana");
+     arrayList.add("Apple");
+     arrayList.add("Orange");
+     System.out.println("ArrayList: " + arrayList); // Output: ArrayList: [Banana, Apple, Orange]
+     ```
+
+2. **Java LinkedList**:
+   - `LinkedList` is a doubly-linked list implementation of the `List` and `Deque` interfaces.
+   - It allows for efficient insertion and removal of elements.
+     ```java
+     LinkedList<String> linkedList = new LinkedList<>();
+     linkedList.add("Dog");
+     linkedList.add("Cat");
+     linkedList.add("Horse");
+     System.out.println("LinkedList: " + linkedList); // Output: LinkedList: [Dog, Cat, Horse]
+     ```
+
+3. **Java List Sorting**:
+   - Lists can be sorted using `Collections.sort()`.
+   - Custom sorting can be achieved using a `Comparator`.
+     ```java
+     // Sorting ArrayList
+     Collections.sort(arrayList);
+     System.out.println("Sorted ArrayList: " + arrayList); // Output: Sorted ArrayList: [Apple, Banana, Orange]
+
+     // Sorting LinkedList
+     Collections.sort(linkedList);
+     System.out.println("Sorted LinkedList: " + linkedList); // Output: Sorted LinkedList: [Cat, Dog, Horse]
+
+     // Sorting with custom comparator
+     arrayList.sort(Comparator.reverseOrder());
+     System.out.println("Reverse Sorted ArrayList: " + arrayList); // Output: Reverse Sorted ArrayList: [Orange, Banana, Apple]
+     ```
+
+4. **Java HashMap**:
+   - `HashMap` is a collection that stores key-value pairs.
+   - Keys must be unique, but values can be duplicated.
+     ```java
+     HashMap<String, Integer> hashMap = new HashMap<>();
+     hashMap.put("One", 1);
+     hashMap.put("Two", 2);
+     hashMap.put("Three", 3);
+     System.out.println("HashMap: " + hashMap); // Output: HashMap: {One=1, Two=2, Three=3}
+
+     // Iterating through HashMap
+     for (Map.Entry<String, Integer> entry : hashMap.entrySet()) {
+         System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+         // Output:
+         // Key: One, Value: 1
+         // Key: Two, Value: 2
+         // Key: Three, Value: 3
+     }
+
+     // Another way of iterating through HashMap using forEach
+     hashMap.forEach((key, value) -> System.out.println("Key: " + key + ", Value: " + value));
+     // Output:
+     // Key: One, Value: 1
+     // Key: Two, Value: 2
+     // Key: Three, Value: 3
+     ```
+
+This comprehensive program demonstrates the use of `ArrayList`, `LinkedList`, list sorting, and `HashMap` in Java, with clear examples and expected outputs.
