@@ -335,3 +335,465 @@ Is nullStr null?: true
 ```
 
 ---
+
+Sure! Here's a single Java program that covers the basics of Java Math, Booleans, If...Else, Switch, While Loop, For Loop, and Break/Continue:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Java Math
+        double num1 = 25.0;
+        double num2 = 9.0;
+        
+        double sqrt = Math.sqrt(num1); // Square root
+        double power = Math.pow(num1, 2); // Power
+        double max = Math.max(num1, num2); // Maximum
+        double min = Math.min(num1, num2); // Minimum
+        double random = Math.random(); // Random number between 0.0 and 1.0
+        
+        System.out.println("Square root of " + num1 + ": " + sqrt);
+        System.out.println(num1 + " to the power of 2: " + power);
+        System.out.println("Maximum of " + num1 + " and " + num2 + ": " + max);
+        System.out.println("Minimum of " + num1 + " and " + num2 + ": " + min);
+        System.out.println("Random number: " + random);
+        
+        // Java Booleans
+        boolean isJavaFun = true;
+        boolean isFishTasty = false;
+        
+        System.out.println("Is Java fun? " + isJavaFun);
+        System.out.println("Is fish tasty? " + isFishTasty);
+        
+        // Java If...Else
+        int age = 18;
+        
+        if (age < 18) {
+            System.out.println("You are a minor.");
+        } else {
+            System.out.println("You are an adult.");
+        }
+        
+        // Java Switch
+        int day = 3;
+        
+        switch (day) {
+            case 1:
+                System.out.println("Monday");
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                break;
+            case 3:
+                System.out.println("Wednesday");
+                break;
+            case 4:
+                System.out.println("Thursday");
+                break;
+            case 5:
+                System.out.println("Friday");
+                break;
+            case 6:
+                System.out.println("Saturday");
+                break;
+            case 7:
+                System.out.println("Sunday");
+                break;
+            default:
+                System.out.println("Invalid day");
+        }
+        
+        // Java While Loop
+        int i = 0;
+        while (i < 5) {
+            System.out.println("While loop iteration: " + i);
+            i++;
+        }
+        
+        // Java For Loop
+        for (int j = 0; j < 5; j++) {
+            System.out.println("For loop iteration: " + j);
+        }
+        
+        // Java Break/Continue
+        for (int k = 0; k < 10; k++) {
+            if (k == 5) {
+                continue; // Skip the rest of the loop for this iteration
+            }
+            if (k == 8) {
+                break; // Exit the loop
+            }
+            System.out.println("Break/Continue loop iteration: " + k);
+        }
+    }
+}
+```
+
+### Explanation and Output:
+
+1. **Java Math**:
+   ```java
+   double sqrt = Math.sqrt(25.0);   // Square root of 25.0: 5.0
+   double power = Math.pow(25.0, 2);// 25.0 to the power of 2: 625.0
+   double max = Math.max(25.0, 9.0);// Maximum of 25.0 and 9.0: 25.0
+   double min = Math.min(25.0, 9.0);// Minimum of 25.0 and 9.0: 9.0
+   double random = Math.random();   // Random number: 0.0 <= x < 1.0 (random)
+   ```
+
+2. **Java Booleans**:
+   ```java
+   boolean isJavaFun = true;        // Is Java fun? true
+   boolean isFishTasty = false;     // Is fish tasty? false
+   ```
+
+3. **Java If...Else**:
+   ```java
+   int age = 18;
+   if (age < 18) {
+       System.out.println("You are a minor.");
+   } else {
+       System.out.println("You are an adult."); // You are an adult.
+   }
+   ```
+
+4. **Java Switch**:
+   ```java
+   int day = 3;
+   switch (day) {
+       case 1: System.out.println("Monday"); break;
+       case 2: System.out.println("Tuesday"); break;
+       case 3: System.out.println("Wednesday"); break; // Wednesday
+       case 4: System.out.println("Thursday"); break;
+       case 5: System.out.println("Friday"); break;
+       case 6: System.out.println("Saturday"); break;
+       case 7: System.out.println("Sunday"); break;
+       default: System.out.println("Invalid day");
+   }
+   ```
+
+5. **Java While Loop**:
+   ```java
+   int i = 0;
+   while (i < 5) {
+       System.out.println("While loop iteration: " + i); // 0, 1, 2, 3, 4
+       i++;
+   }
+   ```
+
+6. **Java For Loop**:
+   ```java
+   for (int j = 0; j < 5; j++) {
+       System.out.println("For loop iteration: " + j); // 0, 1, 2, 3, 4
+   }
+   ```
+
+7. **Java Break/Continue**:
+   ```java
+   for (int k = 0; k < 10; k++) {
+       if (k == 5) {
+           continue; // Skip the rest of the loop for this iteration
+       }
+       if (k == 8) {
+           break; // Exit the loop
+       }
+       System.out.println("Break/Continue loop iteration: " + k); // 0, 1, 2, 3, 4, 6, 7
+   }
+   ```
+
+This comprehensive program demonstrates the usage of Java's math functions, boolean variables, conditional statements (`if...else` and `switch`), loops (`while` and `for`), and control flow statements (`break` and `continue`). The comments in the code provide the expected output for each section.
+
+
+---
+
+
+Certainly! Below is a comprehensive Java program that demonstrates various ways to declare and initialize arrays, as well as common methods and operations:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // 1. Declaration and Initialization
+        int[] arr1 = {1, 2, 3, 4, 5}; // Static initialization
+        int[] arr2 = new int[5]; // Declaration with size
+        arr2[0] = 10;
+        arr2[1] = 20;
+        arr2[2] = 30;
+        arr2[3] = 40;
+        arr2[4] = 50;
+
+        int[] arr3; // Declaration
+        arr3 = new int[]{100, 200, 300}; // Dynamic initialization
+
+        // 2. Accessing elements
+        System.out.println("First element of arr1: " + arr1[0]);
+        System.out.println("Second element of arr2: " + arr2[1]);
+        System.out.println("Third element of arr3: " + arr3[2]);
+
+        // 3. Array Length
+        System.out.println("Length of arr1: " + arr1.length);
+        System.out.println("Length of arr2: " + arr2.length);
+        System.out.println("Length of arr3: " + arr3.length);
+
+        // 4. Iterating over Arrays
+        System.out.print("Elements of arr1: ");
+        for (int i = 0; i < arr1.length; i++) {
+            System.out.print(arr1[i] + " ");
+        }
+        System.out.println();
+
+        System.out.print("Elements of arr2 using enhanced for loop: ");
+        for (int num : arr2) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+        // 5. Copying Arrays
+        int[] arr4 = arr1.clone(); // Using clone method
+        System.out.print("Elements of arr4 (cloned from arr1): ");
+        for (int num : arr4) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+        // 6. Sorting Arrays
+        java.util.Arrays.sort(arr2); // Sorting arr2
+        System.out.print("Sorted elements of arr2: ");
+        for (int num : arr2) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+        // 7. Searching Arrays
+        int index = java.util.Arrays.binarySearch(arr2, 30); // Binary search in sorted arr2
+        System.out.println("Index of 30 in sorted arr2: " + index);
+
+        // 8. Filling Arrays
+        int[] arr5 = new int[5];
+        java.util.Arrays.fill(arr5, 7); // Filling arr5 with 7
+        System.out.print("Elements of arr5 after filling: ");
+        for (int num : arr5) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+        // 9. Comparing Arrays
+        boolean areEqual = java.util.Arrays.equals(arr1, arr4); // Comparing arr1 and arr4
+        System.out.println("Are arr1 and arr4 equal?: " + areEqual);
+
+        // 10. Multidimensional Arrays
+        int[][] multiArr = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+        
+        System.out.println("Elements of multiArr:");
+        for (int i = 0; i < multiArr.length; i++) {
+            for (int j = 0; j < multiArr[i].length; j++) {
+                System.out.print(multiArr[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+### Explanation and Output:
+
+1. **Declaration and Initialization**:
+   ```java
+   int[] arr1 = {1, 2, 3, 4, 5};           // Static initialization
+   int[] arr2 = new int[5];                // Declaration with size
+   arr2[0] = 10;
+   arr2[1] = 20;
+   arr2[2] = 30;
+   arr2[3] = 40;
+   arr2[4] = 50;
+
+   int[] arr3;                             // Declaration
+   arr3 = new int[]{100, 200, 300};        // Dynamic initialization
+   ```
+
+2. **Accessing elements**:
+   ```java
+   System.out.println("First element of arr1: " + arr1[0]);    // First element of arr1: 1
+   System.out.println("Second element of arr2: " + arr2[1]);   // Second element of arr2: 20
+   System.out.println("Third element of arr3: " + arr3[2]);    // Third element of arr3: 300
+   ```
+
+3. **Array Length**:
+   ```java
+   System.out.println("Length of arr1: " + arr1.length);       // Length of arr1: 5
+   System.out.println("Length of arr2: " + arr2.length);       // Length of arr2: 5
+   System.out.println("Length of arr3: " + arr3.length);       // Length of arr3: 3
+   ```
+
+4. **Iterating over Arrays**:
+   ```java
+   System.out.print("Elements of arr1: ");
+   for (int i = 0; i < arr1.length; i++) {
+       System.out.print(arr1[i] + " ");                       // Elements of arr1: 1 2 3 4 5
+   }
+
+   System.out.print("Elements of arr2 using enhanced for loop: ");
+   for (int num : arr2) {
+       System.out.print(num + " ");                           // Elements of arr2 using enhanced for loop: 10 20 30 40 50
+   }
+   ```
+
+5. **Copying Arrays**:
+   ```java
+   int[] arr4 = arr1.clone();                                 // Using clone method
+   System.out.print("Elements of arr4 (cloned from arr1): ");
+   for (int num : arr4) {
+       System.out.print(num + " ");                           // Elements of arr4 (cloned from arr1): 1 2 3 4 5
+   }
+   ```
+
+6. **Sorting Arrays**:
+   ```java
+   java.util.Arrays.sort(arr2);                               // Sorting arr2
+   System.out.print("Sorted elements of arr2: ");
+   for (int num : arr2) {
+       System.out.print(num + " ");                           // Sorted elements of arr2: 10 20 30 40 50
+   }
+   ```
+
+7. **Searching Arrays**:
+   ```java
+   int index = java.util.Arrays.binarySearch(arr2, 30);       // Binary search in sorted arr2
+   System.out.println("Index of 30 in sorted arr2: " + index);// Index of 30 in sorted arr2: 2
+   ```
+
+8. **Filling Arrays**:
+   ```java
+   int[] arr5 = new int[5];
+   java.util.Arrays.fill(arr5, 7);                            // Filling arr5 with 7
+   System.out.print("Elements of arr5 after filling: ");
+   for (int num : arr5) {
+       System.out.print(num + " ");                           // Elements of arr5 after filling: 7 7 7 7 7
+   }
+   ```
+
+9. **Comparing Arrays**:
+   ```java
+   boolean areEqual = java.util.Arrays.equals(arr1, arr4);    // Comparing arr1 and arr4
+   System.out.println("Are arr1 and arr4 equal?: " + areEqual);// Are arr1 and arr4 equal?: true
+   ```
+
+10. **Multidimensional Arrays**:
+   ```java
+   int[][] multiArr = {
+       {1, 2, 3},
+       {4, 5, 6},
+       {7, 8, 9}
+   };
+
+   System.out.println("Elements of multiArr:");
+   for (int i = 0; i < multiArr.length; i++) {
+       for (int j = 0; j < multiArr[i].length; j++) {
+           System.out.print(multiArr[i][j] + " ");            // Elements of multiArr: 1 2 3  4 5 6  7 8 9
+       }
+       System.out.println();
+   }
+   ```
+
+This program covers various ways to declare and initialize arrays, common methods such as `clone`, `sort`, `binarySearch`, `fill`, and `equals`, and operations like accessing elements, iterating over arrays, copying arrays, and working with multidimensional arrays.
+
+
+---
+
+
+Sure! Below is a single Java program that demonstrates Java methods, method parameters, and method overloading:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Java Methods
+        greet(); // Calling the greet method
+
+        // Java Method Parameters
+        int a = 10;
+        int b = 20;
+        int sum = add(a, b); // Calling the add method with parameters
+        System.out.println("Sum of " + a + " and " + b + ": " + sum);
+
+        // Java Method Overloading
+        System.out.println("Area of rectangle (5, 10): " + calculateArea(5, 10)); // Two int parameters
+        System.out.println("Area of square (5): " + calculateArea(5)); // One int parameter
+        System.out.println("Area of rectangle (5.0, 10.0): " + calculateArea(5.0, 10.0)); // Two double parameters
+    }
+
+    // Method without parameters and return type
+    public static void greet() {
+        System.out.println("Hello, World!");
+    }
+
+    // Method with parameters and return type
+    public static int add(int x, int y) {
+        return x + y;
+    }
+
+    // Method Overloading: Different number of parameters
+    public static int calculateArea(int length, int width) {
+        return length * width;
+    }
+
+    // Method Overloading: Single parameter (square)
+    public static int calculateArea(int side) {
+        return side * side;
+    }
+
+    // Method Overloading: Different parameter types
+    public static double calculateArea(double length, double width) {
+        return length * width;
+    }
+}
+```
+
+### Explanation and Output:
+
+1. **Java Methods**:
+   ```java
+   public static void greet() {
+       System.out.println("Hello, World!"); // Output: Hello, World!
+   }
+   ```
+
+2. **Java Method Parameters**:
+   ```java
+   public static int add(int x, int y) {
+       return x + y; // Returns the sum of x and y
+   }
+
+   int a = 10;
+   int b = 20;
+   int sum = add(a, b);
+   System.out.println("Sum of " + a + " and " + b + ": " + sum); // Output: Sum of 10 and 20: 30
+   ```
+
+3. **Java Method Overloading**:
+   ```java
+   // Method Overloading: Different number of parameters
+   public static int calculateArea(int length, int width) {
+       return length * width; // Returns the area of a rectangle
+   }
+
+   // Method Overloading: Single parameter (square)
+   public static int calculateArea(int side) {
+       return side * side; // Returns the area of a square
+   }
+
+   // Method Overloading: Different parameter types
+   public static double calculateArea(double length, double width) {
+       return length * width; // Returns the area of a rectangle with double parameters
+   }
+
+   System.out.println("Area of rectangle (5, 10): " + calculateArea(5, 10)); // Output: Area of rectangle (5, 10): 50
+   System.out.println("Area of square (5): " + calculateArea(5)); // Output: Area of square (5): 25
+   System.out.println("Area of rectangle (5.0, 10.0): " + calculateArea(5.0, 10.0)); // Output: Area of rectangle (5.0, 10.0): 50.0
+   ```
+
+This program demonstrates how to define and use methods in Java, including methods with parameters and return types, as well as method overloading, which allows multiple methods with the same name but different parameters. The comments provide the expected output for each section.
+
+
+---
+
