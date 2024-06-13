@@ -1411,3 +1411,207 @@ public class Main {
      ```
 
 This comprehensive program demonstrates the use of `ArrayList`, `LinkedList`, list sorting, and `HashMap` in Java, with clear examples and expected outputs.
+
+
+---
+
+Certainly! Here’s a comprehensive Java program that includes examples of using `HashSet`, `Iterator`, wrapper classes, exceptions, regular expressions (RegEx), threads, and lambda expressions:
+
+```java
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class Main {
+    public static void main(String[] args) {
+        // Java HashSet
+        HashSet<String> hashSet = new HashSet<>();
+        hashSet.add("Apple");
+        hashSet.add("Banana");
+        hashSet.add("Cherry");
+        hashSet.add("Apple"); // Duplicate, will not be added
+        System.out.println("HashSet: " + hashSet); // Output: HashSet: [Banana, Cherry, Apple]
+
+        // Java Iterator
+        Iterator<String> iterator = hashSet.iterator();
+        System.out.print("Iterating HashSet: ");
+        while (iterator.hasNext()) {
+            System.out.print(iterator.next() + " ");
+        }
+        // Output: Iterating HashSet: Banana Cherry Apple
+
+        // Java Wrapper Classes
+        Integer intWrapper = Integer.valueOf(100);
+        Double doubleWrapper = Double.valueOf(10.5);
+        System.out.println("\nInteger value: " + intWrapper); // Output: Integer value: 100
+        System.out.println("Double value: " + doubleWrapper); // Output: Double value: 10.5
+
+        // Java Exceptions
+        try {
+            int result = divide(10, 0);
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Exception: " + e.getMessage()); // Output: Exception: / by zero
+        }
+
+        // Java RegEx
+        String text = "Hello, my email is example@example.com";
+        String emailPattern = "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b";
+        Pattern pattern = Pattern.compile(emailPattern);
+        Matcher matcher = pattern.matcher(text);
+        if (matcher.find()) {
+            System.out.println("Found email: " + matcher.group()); // Output: Found email: example@example.com
+        } else {
+            System.out.println("No email found.");
+        }
+
+        // Java Threads
+        Thread thread1 = new Thread(new RunnableTask());
+        Thread thread2 = new Thread(() -> System.out.println("Thread 2 is running")); // Using lambda for Runnable
+        thread1.start(); // Output: Thread 1 is running
+        thread2.start(); // Output: Thread 2 is running
+
+        // Java Lambda
+        MathOperation addition = (a, b) -> a + b;
+        MathOperation multiplication = (a, b) -> a * b;
+        System.out.println("Addition: " + operate(5, 3, addition)); // Output: Addition: 8
+        System.out.println("Multiplication: " + operate(5, 3, multiplication)); // Output: Multiplication: 15
+    }
+
+    public static int divide(int a, int b) {
+        return a / b; // This will throw ArithmeticException if b is 0
+    }
+
+    // Lambda expression for a functional interface
+    interface MathOperation {
+        int operation(int a, int b);
+    }
+
+    public static int operate(int a, int b, MathOperation mathOperation) {
+        return mathOperation.operation(a, b);
+    }
+
+    // Runnable task for threads
+    static class RunnableTask implements Runnable {
+        @Override
+        public void run() {
+            System.out.println("Thread 1 is running");
+        }
+    }
+}
+```
+
+### Explanation and Output:
+
+1. **Java HashSet**:
+   - `HashSet` stores unique elements and does not allow duplicates.
+     ```java
+     HashSet<String> hashSet = new HashSet<>();
+     hashSet.add("Apple");
+     hashSet.add("Banana");
+     hashSet.add("Cherry");
+     hashSet.add("Apple"); // Duplicate, will not be added
+     System.out.println("HashSet: " + hashSet); // Output: HashSet: [Banana, Cherry, Apple]
+     ```
+
+2. **Java Iterator**:
+   - `Iterator` is used to traverse elements in a collection.
+     ```java
+     Iterator<String> iterator = hashSet.iterator();
+     System.out.print("Iterating HashSet: ");
+     while (iterator.hasNext()) {
+         System.out.print(iterator.next() + " ");
+     }
+     // Output: Iterating HashSet: Banana Cherry Apple
+     ```
+
+3. **Java Wrapper Classes**:
+   - Wrapper classes provide a way to use primitive data types as objects.
+     ```java
+     Integer intWrapper = Integer.valueOf(100);
+     Double doubleWrapper = Double.valueOf(10.5);
+     System.out.println("Integer value: " + intWrapper); // Output: Integer value: 100
+     System.out.println("Double value: " + doubleWrapper); // Output: Double value: 10.5
+     ```
+
+4. **Java Exceptions**:
+   - Demonstrates exception handling using `try-catch`.
+     ```java
+     try {
+         int result = divide(10, 0);
+         System.out.println("Result: " + result);
+     } catch (ArithmeticException e) {
+         System.out.println("Exception: " + e.getMessage()); // Output: Exception: / by zero
+     }
+
+     public static int divide(int a, int b) {
+         return a / b; // This will throw ArithmeticException if b is 0
+     }
+     ```
+
+5. **Java RegEx**:
+   - Regular expressions are used for pattern matching.
+     ```java
+     String text = "Hello, my email is example@example.com";
+     String emailPattern = "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b";
+     Pattern pattern = Pattern.compile(emailPattern);
+     Matcher matcher = pattern.matcher(text);
+     if (matcher.find()) {
+         System.out.println("Found email: " + matcher.group()); // Output: Found email: example@example.com
+     } else {
+         System.out.println("No email found.");
+     }
+     ```
+
+6. **Java Threads**:
+   - Demonstrates creating and starting threads.
+     ```java
+     Thread thread1 = new Thread(new RunnableTask());
+     Thread thread2 = new Thread(() -> System.out.println("Thread 2 is running")); // Using lambda for Runnable
+     thread1.start(); // Output: Thread 1 is running
+     thread2.start(); // Output: Thread 2 is running
+
+     // Runnable task for threads
+     static class RunnableTask implements Runnable {
+         @Override
+         public void run() {
+             System.out.println("Thread 1 is running");
+         }
+     }
+     ```
+
+7. **Java Lambda**:
+   - Demonstrates using lambda expressions with a functional interface.
+     ```java
+     // Lambda expression for a functional interface
+     interface MathOperation {
+         int operation(int a, int b);
+     }
+
+     public static int operate(int a, int b, MathOperation mathOperation) {
+         return mathOperation.operation(a, b);
+     }
+
+     MathOperation addition = (a, b) -> a + b;
+     MathOperation multiplication = (a, b) -> a * b;
+     System.out.println("Addition: " + operate(5, 3, addition)); // Output: Addition: 8
+     System.out.println("Multiplication: " + operate(5, 3, multiplication)); // Output: Multiplication: 15
+     ```
+
+### Output:
+
+```
+HashSet: [Banana, Cherry, Apple]
+Iterating HashSet: Banana Cherry Apple 
+Integer value: 100
+Double value: 10.5
+Exception: / by zero
+Found email: example@example.com
+Thread 1 is running
+Thread 2 is running
+Addition: 8
+Multiplication: 15
+```
+
+This comprehensive program demonstrates the use of `HashSet`, `Iterator`, wrapper classes, exceptions, regular expressions, threads, and lambda expressions in Java, with clear examples and expected outputs.
