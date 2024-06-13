@@ -40,9 +40,7 @@ Java is a high-level, object-oriented programming language developed by Sun Micr
 
 2. **Memory Consumption**: Java applications can consume more memory than applications written in languages like C or C++ because of its high-level features and garbage collection mechanism.
 
-3. **Verbose Syntax**: Java's syntax can be more verbose compared to some other languages, meaning more lines of code are required to accomplish the same tasks.
-
-4. **Look and Feel**: GUI applications developed in Java using frameworks like Swing or AWT can sometimes feel less native compared to applications written in languages specifically designed for a particular platform.
+3. **Verbose Syntax**: Java's syntax requires more lines of code to accomplish the same tasks.
 
 5. **Learning Curve**: While simpler than C++, Java can still have a steep learning curve for beginners due to its extensive libraries and APIs.
 
